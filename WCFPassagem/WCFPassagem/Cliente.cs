@@ -13,6 +13,6 @@ namespace WCFPassagem
         public string Nome{ get; set; }
 
         [DataMember]
-        public string CPF{ get; set; }
+        public string Cpf{ get; set; }
     }
 }

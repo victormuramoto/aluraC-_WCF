@@ -6,21 +6,16 @@ using System.Threading.Tasks;
 
 namespace WCFPassagem
 {
-    public class ClienteDAO
+    public class ClienteService : IClienteService
     {
-        private static List<Cliente> dados = new List<Cliente>();
-
         public void Add(Cliente cliente)
         {
-            ClienteDAO.dados.Add(cliente);
+            new ClienteDAO().Add(cliente);
         }
 
         public Cliente Buscar(string nome)
         {
-            return dados.Where(cliente => cliente.Nome.Equals(nome)).FirstOrDefault();
-            
+            return new ClienteDAO().Buscar(nome);
         }
-
-
     }
 }

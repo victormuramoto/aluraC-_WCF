@@ -8,7 +8,7 @@ namespace WCFPassagem
 {
     public class ClienteDAO
     {
-        private static List<Cliente> dados = new List<Cliente>();
+        public static List<Cliente> dados = new List<Cliente>();
 
         public void Add(Cliente cliente)
         {
@@ -21,6 +21,9 @@ namespace WCFPassagem
             
         }
 
-
+        public IEnumerable<Cliente> GetClientes()
+        {
+            return dados;
+        }
     }
 }

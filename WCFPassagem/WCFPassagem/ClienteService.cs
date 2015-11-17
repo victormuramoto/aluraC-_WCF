@@ -8,14 +8,23 @@ namespace WCFPassagem
 {
     public class ClienteService : IClienteService
     {
-        public void Add(Cliente cliente)
+        public bool Add(string nome, string cpf)
         {
-            new ClienteDAO().Add(cliente);
+            new ClienteDAO().Add(
+                new Cliente() { Nome = nome,Cpf = cpf });
+
+            return true;
         }
 
         public Cliente Buscar(string nome)
         {
             return new ClienteDAO().Buscar(nome);
+        }
+
+
+        public IEnumerable<Cliente> GetClientes()
+        {
+            return new ClienteDAO().GetClientes().ToList();
         }
     }
 }
